@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/aac5c45839.js"></script>
+    <title>Document</title>
+</head>
+<body onload="enableEditMode();">
+    <div>
+        <button><i onclick="execCmd('bold');" class="fa fa-bold"></i></button>
+        <button><i onclick="execCmd('italic');" class="fa fa-italic"></i></button>
+        <button><i onclick="execCmd('underline');" class="fa fa-underline"></i></button>
+        <button><i onclick="execCmd('strikeThrough');" class="fa fa-strikethrough"></i></button>
+        <button><i onclick="execCmd('justifyLeft');" class="fa fa-align-left"></i></button>
+        <button><i onclick="execCmd('justifyCenter');" class="fa fa-align-center"></i></button>
+        <button><i onclick="execCmd('justifyRight');" class="fa fa-align-right"></i></button>
+        <button><i onclick="execCmd('justifyFull');" class="fa fa-align-justify"></i></button>
+        <button><i onclick="execCmd('indent');" class="fa fa-indent"></i></button>
+        <button><i onclick="execCmd('outdent');" class="fa fa-dedent"></i></button>
+        <button><i onclick="execCmd('subscript');" class="fa fa-subscript"></i></button>
+        <button><i onclick="execCmd('superscript');" class="fa fa-superscript"></i></button>
+        <button><i onclick="execCmd('undo');" class="fa fa-undo"></i></button>
+        <button><i onclick="execCmd('redo');" class="fa fa-repeat"></i></button>
+        <button><i onclick="execCmd('insertUnorderedList');" class="fa fa-list-ul"></i></button>
+        <button><i onclick="execCmd('insertOrderedList');" class="fa fa-list-ol"></i></button>
+        <button><i onclick="execCmd('insertParagraph');" class="fa fa-paragraph"></i></button>
+        <select onchange="execCommandWithArg('formatBlock',this.value);">
+            <option value="H1">H1</option>
+            <option value="H2">H2</option>
+            <option value="H3">H3</option>
+            <option value="H4">H4</option>
+            <option value="H5">H5</option>
+            <option value="H6">H6</option>
+        </select>
+        <button onclick="execCmd('insertHorizontalRule');">HR</button>
+        <button><i onclick="execCmd('createLink',prompt('Insira uma URL','http://'));" class="fa fa-link"></i></button>
+        <button><i onclick="execCmd('unlink');" class="fa fa-unlink"></i></button>
+        <button><i onclick="toggleSource();" class="fa fa-code"></i></button>
+        <button><i onclick="toggleEdit();" class="fa fa-edit"></i></button>
+        <select onchange="execCommandWithArg('fontName',this.value);">
+            <option value="Arial">Arial</option>
+            <option value="TimesNewRoman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="ComicSans">Comic Sans</option>
+            <option value="Courier">Courier</option>
+            <option value="Georgia">Georgia</option>
+        </select>
+        <select onchange="execCommandWithArg('fontSize',this.value);">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+        Fore Color: <input type="color" onchange="execCommandWithArg('foreColor',this.value);" />
+        Background Color: <input type="color" onchange="execCommandWithArg('hiliteColor',this.value);" />
+        <button><i onclick="execCommandWithArg('image',prompt('Insira uma URL de uma imagem',''));" class="fa fa-file-image-o"></i></button>
+        <button><i onclick="execCmd('selectAll');" class="fa fa-object-group"></i></button>
+    </div>
+    <iframe name="richTextField" style="width: 500px; height: 300px;"></iframe>
+</body>
+<script src="../js/editor.js"></script>
+</html>

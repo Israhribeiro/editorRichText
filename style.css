@@ -1,0 +1,7 @@
+.caixaTexto{
+    width: 500px;
+    height: 200px;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 3px;
+}
