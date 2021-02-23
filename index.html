@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.fontawesome.com/aac5c45839.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body onload="enableEditMode();">
-    <div>
+    <div class="conteudo">
+    <div class="botoes" style="margin-left:auto;margin-right:auto;">
         <button><i onclick="execCmd('bold');" class="fa fa-bold"></i></button>
         <button><i onclick="execCmd('italic');" class="fa fa-italic"></i></button>
         <button><i onclick="execCmd('underline');" class="fa fa-underline"></i></button>
@@ -39,6 +41,8 @@
         <button><i onclick="execCmd('unlink');" class="fa fa-unlink"></i></button>
         <button><i onclick="toggleSource();" class="fa fa-code"></i></button>
         <button><i onclick="toggleEdit();" class="fa fa-edit"></i></button>
+        <button><i onclick="execCommandWithArg('image',prompt('Insira uma URL de uma imagem',''));" class="fa fa-file-image-o"></i></button>
+        <button><i onclick="execCmd('selectAll');" class="fa fa-object-group"></i></button>
         <select onchange="execCommandWithArg('fontName',this.value);">
             <option value="Arial">Arial</option>
             <option value="TimesNewRoman">Times New Roman</option>
@@ -56,13 +60,12 @@
             <option value="5">5</option>
             <option value="6">6</option>
             <option value="7">7</option>
-        </select>
-        Fore Color: <input type="color" onchange="execCommandWithArg('foreColor',this.value);" />
-        Background Color: <input type="color" onchange="execCommandWithArg('hiliteColor',this.value);" />
-        <button><i onclick="execCommandWithArg('image',prompt('Insira uma URL de uma imagem',''));" class="fa fa-file-image-o"></i></button>
-        <button><i onclick="execCmd('selectAll');" class="fa fa-object-group"></i></button>
+        </select><br>
+        <span class="texto"> Fore Color: </span> <input type="color" onchange="execCommandWithArg('foreColor',this.value);" />
+        <span class="texto"> Background Color:</span> <input type="color" onchange="execCommandWithArg('hiliteColor',this.value);" />
     </div>
-    <iframe name="richTextField" style="width: 500px; height: 300px;"></iframe>
+    <iframe class="caixaTexto" name="richTextField" style="width: 500px; height: 300px;"></iframe>
+    </div>
 </body>
-<script src="../js/editor.js"></script>
+<script src="editor.js"></script>
 </html>

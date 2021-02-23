@@ -11,14 +11,15 @@ function execCmd(command){
 
 function execCommandWithArg(command,argument){
     richTextField.document.execCommand(command,false,argument);
+    document.getElementsByTagName
 }
 
 function toggleSource(){
     if(showingSourceCode){
-        richTextField.document.getElementByTagName('body')[0].innerHTML = richTextField.document.getElementByTagName('body')[0].textContent;
+        richTextField.document.getElementsByTagName('body')[0].innerHTML = richTextField.document.getElementsByTagName('body')[0].textContent;
         showingSourceCode = false;
     }else{
-        richTextField.document.getElementByTagName('body')[0].textContent = richTextField.document.getElementByTagName('body')[0].innerHTML;
+        richTextField.document.getElementsByTagName('body')[0].textContent = richTextField.document.getElementsByTagName('body')[0].innerHTML;
         showingSourceCode = true;
     }
 }
