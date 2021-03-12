@@ -28,6 +28,13 @@
         <button><i onclick="execCmd('insertUnorderedList');" class="fa fa-list-ul"></i></button>
         <button><i onclick="execCmd('insertOrderedList');" class="fa fa-list-ol"></i></button>
         <button><i onclick="execCmd('insertParagraph');" class="fa fa-paragraph"></i></button>
+        <button onclick="execCmd('insertHorizontalRule');">HR</button>
+        <button><i onclick="execCmd('createLink',prompt('Insira uma URL','http://'));" class="fa fa-link"></i></button>
+        <button><i onclick="execCmd('unlink');" class="fa fa-unlink"></i></button>
+        <button><i onclick="toggleSource();" class="fa fa-code"></i></button>
+        <button><i onclick="toggleEdit();" class="fa fa-edit"></i></button>
+        <button><i onclick="execCommandWithArg('image',prompt('Insira uma URL de uma imagem',''));" class="fa fa-file-image-o"></i></button>
+        <button><i onclick="execCmd('selectAll');" class="fa fa-object-group"></i></button>
         <select onchange="execCommandWithArg('formatBlock',this.value);">
             <option value="H1">H1</option>
             <option value="H2">H2</option>
@@ -36,14 +43,8 @@
             <option value="H5">H5</option>
             <option value="H6">H6</option>
         </select>
-        <button onclick="execCmd('insertHorizontalRule');">HR</button>
-        <button><i onclick="execCmd('createLink',prompt('Insira uma URL','http://'));" class="fa fa-link"></i></button>
-        <button><i onclick="execCmd('unlink');" class="fa fa-unlink"></i></button>
-        <button><i onclick="toggleSource();" class="fa fa-code"></i></button>
-        <button><i onclick="toggleEdit();" class="fa fa-edit"></i></button>
-        <button><i onclick="execCommandWithArg('image',prompt('Insira uma URL de uma imagem',''));" class="fa fa-file-image-o"></i></button>
-        <button><i onclick="execCmd('selectAll');" class="fa fa-object-group"></i></button>
         <select onchange="execCommandWithArg('fontName',this.value);">
+            <option value="" disabled selected>Fonte</option>
             <option value="Arial">Arial</option>
             <option value="TimesNewRoman">Times New Roman</option>
             <option value="Verdana">Verdana</option>
@@ -53,6 +54,7 @@
             <option value="Georgia">Georgia</option>
         </select>
         <select onchange="execCommandWithArg('fontSize',this.value);">
+            <option value="" disabled selected>Tamanho da Fonte</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -61,10 +63,10 @@
             <option value="6">6</option>
             <option value="7">7</option>
         </select><br>
-        <span class="texto"> Fore Color: </span> <input type="color" onchange="execCommandWithArg('foreColor',this.value);" />
-        <span class="texto"> Background Color:</span> <input type="color" onchange="execCommandWithArg('hiliteColor',this.value);" />
+        <span class="texto"> Fore Color: <input  type="color" onchange="execCommandWithArg('foreColor',this.value);" /></span>
+        <span class="texto"> Background Color: <input type="color" onchange="execCommandWithArg('hiliteColor',this.value);" /></span>
     </div>
-    <iframe class="caixaTexto" name="richTextField" style="width: 500px; height: 300px;"></iframe>
+    <iframe class="caixaTexto" name="richTextField" style="width: 520px; height: 300px;"></iframe>
     </div>
 </body>
 <script src="editor.js"></script>
